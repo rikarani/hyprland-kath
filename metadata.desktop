@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=kath
+Description="SDDM Theme with Hyprland Mascot"
+Author=rikarani
+Website=https://github.com/rikarani
+Type=sddm-theme
+Version=1.3
+ConfigFile=theme.conf
+MainScript=Main.qml
+Theme-Id=kath
+Theme-API=2.0
+QtVersion=6
