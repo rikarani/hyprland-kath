@@ -728,8 +728,6 @@ Pane {
                 Layout.leftMargin: 0
                 
                 property var selectedSession: selectSession.currentIndex
-                property string textConstantSession
-                property int loginButtonWidth
 
                 ComboBox {
                     id: selectSession
@@ -745,7 +743,7 @@ Pane {
                     textRole: "name"
                     
                     Keys.onPressed: (event) => {
-                        if ((event.key == Qt.Key_Left || event.key == Qt.Key_Right) && !popup.opened) {
+                        if ((event.key == Qt.Key_Left || event.key == Qt.Key_Right) && !popup.visible) {
                             popup.open();
                         }
                     }
@@ -781,10 +779,10 @@ Pane {
                         
                         text: `Session is ${selectSession.currentText}`
                         color: "#b4d8ff"
-                        font.pointSize: root.font.pointSize * 0.8
+                        font.pointSize: root.font.pointSize
                         font.family: root.font.family
 
-                        Keys.onReleased: parent.popup.open()
+                        Keys.onReleased: selectSession.popup.open()
                     }
 
                     background: Rectangle {
